@@ -1,0 +1,67 @@
+{
+    "tasks": [
+        {
+            "id": 0,
+            "desc": "Review Python project requirements",
+            "status": "Done",
+            "created_at": "2026-03-01",
+            "updated_at": "2026-03-01"
+        },
+        {
+            "id": 1,
+            "desc": "Debug the update_task_status function",
+            "status": "In-Progress",
+            "created_at": "2026-03-02",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 2,
+            "desc": "Set up PowerShell alias for task-cli",
+            "status": "Done",
+            "created_at": "2026-03-02",
+            "updated_at": "2026-03-02"
+        },
+        {
+            "id": 3,
+            "desc": "Fix JSON database pathing logic",
+            "status": "In-Progress",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 4,
+            "desc": "Refactor render_response for better UI",
+            "status": "Todo",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 5,
+            "desc": "Practice using sys.argv with multi-word strings",
+            "status": "Todo",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 6,
+            "desc": "Add timestamps to task creation",
+            "status": "Todo",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 7,
+            "desc": "Complete roadmap.sh project",
+            "status": "Done",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        },
+        {
+            "id": 8,
+            "desc": "read naruto manga",
+            "status": "Todo",
+            "created_at": "2026-03-03",
+            "updated_at": "2026-03-03"
+        }
+    ]
+}
