@@ -4,7 +4,7 @@ A collection of Python and full-stack projects for learning and practice, all fr
 
 ## Projects
 
-### Expense Tracker
+### [Expense Tracker](https://roadmap.sh/projects/expense-tracker)
 
 A command-line expense management tool with budget tracking features.
 
@@ -12,7 +12,7 @@ A command-line expense management tool with budget tracking features.
 - Manage budgets
 - Export to CSV
 
-### Task Tracker CLI
+### [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
 
 A CLI tool for managing tasks and to-do lists.
 
@@ -20,7 +20,7 @@ A CLI tool for managing tasks and to-do lists.
 - Mark tasks as complete
 - Store tasks in JSON format
 
-### Unit Converter
+### [Unit Converter](https://roadmap.sh/projects/unit-converter)
 
 A full-stack unit converter application.
 
@@ -28,7 +28,7 @@ A full-stack unit converter application.
 - **Frontend**: React + Vite + TypeScript
 - Convert between different units of measurement
 
-### GitHub Activity
+### [GitHub Activity](https://roadmap.sh/projects/github-user-activity)
 
 A simple GitHub activity tracker.
 
