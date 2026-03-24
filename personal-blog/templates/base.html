@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">
+        <a href="/">My Blog</a>
+      </div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        {% if request.session.get("authenticated") %}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/login">Admin Login</a>
+        {% endif %}
+      </div>
+    </nav>
+
+    <main class="container">{% block content %}{% endblock %}</main>
+
+    <footer class="footer">
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

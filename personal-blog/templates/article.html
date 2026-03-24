@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - My Blog{% endblock %}
+
+{% block content %}
+<article class="full-article">
+    <header class="article-header">
+        <h1>{{ article.title }}</h1>
+        <div class="article-meta">
+            <span class="date">{{ article.created_at.strftime('%B %d, %Y') }}</span>
+            <span class="author">By {{ article.author }}</span>
+        </div>
+    </header>
+    
+    <div class="article-content">
+        {{ article.content }}
+    </div>
+    
+    <footer class="article-footer">
+        <a href="/" class="back-link">← Back to Home</a>
+    </footer>
+</article>
+{% endblock %}

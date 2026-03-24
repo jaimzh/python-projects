@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+<header class="hero">
+    <h1>Welcome to My Blog</h1>
+    <p>Thoughts, code, and everything in between.</p>
+</header>
+
+<div class="article-grid">
+    {% for article in articles %}
+    <article class="article-card">
+        <div class="article-info">
+            <span class="date">{{ article.created_at.strftime('%B %d, %Y') }}</span>
+            <h2><a href="/article/{{ article.id }}">{{ article.title }}</a></h2>
+            <p>{{ article.content[:150] }}...</p>
+            <div class="article-footer">
+                <span class="author">By {{ article.author }}</span>
+                <a href="/article/{{ article.id }}" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </article>
+    {% else %}
+    <p class="no-articles">No articles published yet. Check back soon!</p>
+    {% endfor %}
+</div>
+{% endblock %}
