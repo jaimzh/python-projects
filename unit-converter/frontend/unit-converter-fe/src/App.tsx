@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   ModeButton,
   LengthSection,
@@ -7,21 +7,74 @@ import {
   ResultDisplay,
 } from "./components";
 
+import {
+  convertLength,
+  convertWeight,
+  convertTemperature,
+  type ConversionResponse,
+} from "./api/converter";
+
+const modeDefaults = {
+  length: { from: "meter", to: "meter" },
+  weight: { from: "kilogram", to: "kilogram" },
+  temperature: { from: "celsius", to: "fahrenheit" },
+};
+
+type Mode = "length" | "weight" | "temperature";
+
 function App() {
-  const [mode, setMode] = useState<"length" | "weight" | "temperature">(
-    "length",
-  );
+  const [mode, setMode] = useState<Mode>("length");
 
-  const [inputValue, setInputValue] = useState<string>();
-  const [fromUnit, setFromUnit] = useState<string>("");
-  const [toUnit, setToUnit] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>("");
+  const [fromUnit, setFromUnit] = useState<string>(modeDefaults.length.from);
+  const [toUnit, setToUnit] = useState<string>(modeDefaults.length.to);
 
-  const handleConvert = () => {
-    console.log("converting", {
-      inputValue,
-      fromUnit,
-      toUnit,
-    });
+  const [result, setResult] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleModeChange = (newMode: Mode) => {
+    setMode(newMode);
+    setFromUnit(modeDefaults[newMode].from);
+    setToUnit(modeDefaults[newMode].to);
+    setInputValue("");
+    setResult(null);
+    setError(null);
+  };
+
+  const handleConvert = async () => {
+    if (!inputValue) return;
+
+    try {
+      let res: ConversionResponse;
+      if (mode == "length") {
+        res = await convertLength({
+          value: Number(inputValue),
+          from_unit: fromUnit,
+          to_unit: toUnit,
+        });
+        setResult(res.result);
+      } else if (mode == "weight") {
+        res = await convertWeight({
+          value: Number(inputValue),
+          from_unit: fromUnit,
+          to_unit: toUnit,
+        });
+        setResult(res.result);
+      } else if (mode == "temperature") {
+        res = await convertTemperature({
+          value: Number(inputValue),
+          from_unit: fromUnit,
+          to_unit: toUnit,
+        });
+        setResult(res.result);
+      }
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Conversion failed";
+      setError(errorMessage);
+      setResult(null);
+      console.error("Conversion failed:", error);
+    }
   };
 
   return (
@@ -36,21 +89,21 @@ function App() {
           <ModeButton
             mode="length"
             currentMode={mode}
-            onClick={() => setMode("length")}
+            onClick={() => handleModeChange("length")}
           >
             Length
           </ModeButton>
           <ModeButton
             mode="weight"
             currentMode={mode}
-            onClick={() => setMode("weight")}
+            onClick={() => handleModeChange("weight")}
           >
             Weight
           </ModeButton>
           <ModeButton
             mode="temperature"
             currentMode={mode}
-            onClick={() => setMode("temperature")}
+            onClick={() => handleModeChange("temperature")}
           >
             Temperature
           </ModeButton>
@@ -92,7 +145,11 @@ function App() {
         </button>
 
         {/* Result */}
-        <ResultDisplay result="0" />
+        <ResultDisplay result={result?.toString() ?? "0"} />
+
+        {error && (
+          <p className="mt-4 text-red-600 text-sm text-center">{error}</p>
+        )}
       </div>
     </div>
   );

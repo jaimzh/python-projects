@@ -1,3 +1,5 @@
+import type React from "react";
+
 interface ModeButtonProps {
   mode: "length" | "weight" | "temperature";
   currentMode: "length" | "weight" | "temperature";

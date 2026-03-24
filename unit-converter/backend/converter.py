@@ -24,7 +24,7 @@ WEIGHTS_CONVERSION = {
 
 def convert_temperature(value, from_unit, to_unit): 
     # Stage 1: Convert input to Celsius
-    if from_unit == "celcius":
+    if from_unit == "celsius":
         c = value
     elif from_unit == "fahrenheit":
         c = (value - 32) * 5 / 9 
@@ -34,7 +34,7 @@ def convert_temperature(value, from_unit, to_unit):
         raise ValueError("Unknown from_unit")
 
     # Stage 2: Convert Celsius to the target unit
-    if to_unit == "celcius": 
+    if to_unit == "celsius": 
         return c 
     elif to_unit == "fahrenheit": 
         return c * 9 / 5 + 32

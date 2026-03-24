@@ -33,11 +33,10 @@ export function WeightSection({
           name="fromUnit"
           className="w-full px-3 py-2 rounded border border-gray-300 focus:border-black focus:outline-none bg-white"
         >
-          <option value="kilograms">Kilograms</option>
-          <option value="grams">Grams</option>
-          <option value="pounds">Pounds</option>
-          <option value="ounces">Ounces</option>
-          <option value="stones">Stones</option>
+         <option value="kilogram">Kilograms</option>
+<option value="gram">Grams</option>
+<option value="pound">Pounds</option>
+<option value="ounce">Ounces</option>
         </select>
       </div>
 
@@ -50,11 +49,10 @@ export function WeightSection({
           name="toUnit"
           className="w-full px-3 py-2 rounded border border-gray-300 focus:border-black focus:outline-none bg-white"
         >
-          <option value="grams">Grams</option>
-          <option value="kilograms">Kilograms</option>
-          <option value="pounds">Pounds</option>
-          <option value="ounces">Ounces</option>
-          <option value="stones">Stones</option>
+          <option value="kilogram">Kilograms</option>
+<option value="gram">Grams</option>
+<option value="pound">Pounds</option>
+<option value="ounce">Ounces</option>
         </select>
       </div>
     </div>

@@ -33,12 +33,12 @@ export function LengthSection({
           name="fromUnit"
           className="w-full px-3 py-2 rounded border border-gray-300 focus:border-black focus:outline-none bg-white"
         >
-          <option value="meters">Meters</option>
-          <option value="feet">Feet</option>
-          <option value="inches">Inches</option>
-          <option value="centimeters">Centimeters</option>
-          <option value="kilometers">Kilometers</option>
-          <option value="miles">Miles</option>
+         <option value="meter">Meters</option>
+<option value="foot">Feet</option>
+<option value="inch">Inches</option>
+<option value="centimeter">Centimeters</option>
+<option value="kilometer">Kilometers</option>
+<option value="mile">Miles</option>
         </select>
       </div>
 
@@ -51,12 +51,12 @@ export function LengthSection({
           name="toUnit"
           className="w-full px-3 py-2 rounded border border-gray-300 focus:border-black focus:outline-none bg-white"
         >
-          <option value="feet">Feet</option>
-          <option value="meters">Meters</option>
-          <option value="inches">Inches</option>
-          <option value="centimeters">Centimeters</option>
-          <option value="kilometers">Kilometers</option>
-          <option value="miles">Miles</option>
+         <option value="meter">Meters</option>
+<option value="foot">Feet</option>
+<option value="inch">Inches</option>
+<option value="centimeter">Centimeters</option>
+<option value="kilometer">Kilometers</option>
+<option value="mile">Miles</option>
         </select>
       </div>
     </div>
