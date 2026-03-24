@@ -32,6 +32,15 @@ A full-stack unit converter application.
 
 A simple GitHub activity tracker.
 
+### [Personal Blog](https://roadmap.sh/projects/personal-blog)
+
+A full-stack personal blogging platform with a minimalist UI.
+
+- Admin dashboard and session-based authentication
+- **Backend**: FastAPI (Python)
+- **Frontend**: HTML5, CSS3, Jinja2
+
+
 ## Getting Started
 
 Each project has its own README with specific setup instructions. Generally:
@@ -56,6 +65,13 @@ pnpm dev
 ```bash
 cd unit-converter/backend
 python main.py
+```
+
+**Personal Blog:**
+
+```bash
+cd personal-blog
+uvicorn main:app --reload
 ```
 
 ## License
