@@ -1,15 +1,17 @@
-function ModeButton({
+interface ModeButtonProps {
+  mode: "length" | "weight" | "temperature";
+  currentMode: "length" | "weight" | "temperature";
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+export function ModeButton({
   mode,
   currentMode,
   onClick,
   children,
-}: {
-  mode: "length" | "weight" | "temperature"
-  currentMode: "length" | "weight" | "temperature"
-  onClick: () => void
-  children: React.ReactNode
-}) {
-  const isActive = mode === currentMode
+}: ModeButtonProps) {
+  const isActive = mode === currentMode;
   return (
     <button
       className={`px-4 py-2 rounded transition ${
@@ -21,5 +23,5 @@ function ModeButton({
     >
       {children}
     </button>
-  )
+  );
 }
